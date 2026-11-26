@@ -495,6 +495,21 @@ export const LOCAL_PRODUCTS: Product[] = [
     "updatedAt": "2026-11-19T13:08:00.000Z"
   },
   {
+    "id": "prod_1795000000006",
+    "name": "CANELA DE VELHO",
+    "category": "Rapés Sagrados",
+    "shortDescription": "Firmeza, centramento e renovação ancestral",
+    "fullDescription": "Firmeza, centramento e renovação ancestral\n\nA presença da Canela de Velho encontra a força e a identidade da AGBÁRA em um feitio de tradição e propósito.\n\nUma medicina de intensidade forte, elaborada para acompanhar momentos de recolhimento, conexão espiritual e contemplação. Sua composição convida à pausa, ao silêncio e à reconexão com o próprio centro, despertando uma sensação de renovação interior, firmeza e presença.\n\nUm rapé para momentos em que o caminho pede menos ruído, mais escuta e a oportunidade de renovar as próprias forças, deixando espaço para novos movimentos e percepções.\n\nCARACTERÍSTICAS E TRADIÇÃO\n\n* Composição: Rume em pó e cinza de Canela de Velho\n* Intensidade: Forte\n* Apresentação: Frasco com 20 g\n\nAGBÁRA — Ancestralidade Viva",
+    "price": 50,
+    "imageUrl": "/assets/aistudio/Canela_de_Velho_d99eaad6.jpg",
+    "suggestedImagePath": "/images/products/produto-48.webp",
+    "status": "available",
+    "isActive": true,
+    "featured": false,
+    "createdAt": "2026-11-26T15:10:00.000Z",
+    "updatedAt": "2026-11-26T15:10:00.000Z"
+  },
+  {
     "id": "prod_1794706539468",
     "name": "Força Alta Picado Para Cachimbo",
     "category": "TABACO",

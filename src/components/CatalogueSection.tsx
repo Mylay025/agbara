@@ -16,13 +16,11 @@ export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('todas');
-  const [showOnlyAvailable, setShowOnlyAvailable] = useState(false);
 
   // Filtra produtos locais em memória
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
       if (!product.isActive || product.status === 'unavailable') return false;
-      if (showOnlyAvailable && product.status !== 'available') return false;
 
       if (
         selectedCategory !== 'todas' &&
@@ -41,7 +39,7 @@ export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
 
       return true;
     });
-  }, [products, selectedCategory, searchTerm, showOnlyAvailable]);
+  }, [products, selectedCategory, searchTerm]);
 
   return (
     <section id="catalogo" className="py-12 sm:py-16 md:py-24 bg-parchment text-[#171713] relative border-b border-[#D8BD83]/30 overflow-x-hidden">
@@ -86,19 +84,6 @@ export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
                   Limpar
                 </button>
               )}
-            </div>
-
-            {/* Quick Filter: Somente disponíveis */}
-            <div className="flex items-center gap-2 self-start md:self-center">
-              <label className="flex items-center gap-2.5 text-xs sm:text-sm text-[#171713] font-semibold cursor-pointer select-none min-h-[44px] py-1 leading-snug">
-                <input
-                  type="checkbox"
-                  checked={showOnlyAvailable}
-                  onChange={(e) => setShowOnlyAvailable(e.target.checked)}
-                  className="w-4 h-4 accent-[#174B2A] rounded border-[#D8BD83] shrink-0"
-                />
-                <span>Exibir apenas produtos com estoque imediato</span>
-              </label>
             </div>
           </div>
 
@@ -156,14 +141,13 @@ export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
               />
             ))}
           </div>
-        ) : searchTerm !== '' || selectedCategory !== 'todas' || showOnlyAvailable ? (
+        ) : searchTerm !== '' || selectedCategory !== 'todas' ? (
           <div className="py-6 text-center">
             <button
               type="button"
               onClick={() => {
                 setSearchTerm('');
                 setSelectedCategory('todas');
-                setShowOnlyAvailable(false);
               }}
               className="px-5 py-2.5 rounded-xl bg-[#174B2A] hover:bg-[#123B21] text-[#F0E5C9] text-xs font-bold border border-[#D8BD83] transition-colors shadow-sm cursor-pointer"
             >
